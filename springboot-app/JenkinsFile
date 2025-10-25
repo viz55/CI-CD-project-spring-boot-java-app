@@ -14,8 +14,7 @@ pipeline {
 }
     stage('Checkout') {
       steps {
-        sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/viz55/CI-CD-project-spring-boot-java-app.git'
+        git branch: 'main', url: 'https://github.com/viz55/CI-CD-project-spring-boot-java-app.git'
       }
     }
     stage('Build and Test') {
