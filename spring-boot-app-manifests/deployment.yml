@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: springboot-app
-        image: viz55/project-cicd:replaceImageTag
+        image: viz55/project-cicd:16
         ports:
         - containerPort: 8080
