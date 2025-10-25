@@ -58,6 +58,16 @@ pipeline {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
+                    echo "Current directory: $(pwd)"
+                    echo "Files here:"
+                    ls -a
+
+                    if [ ! -d .git ]; then
+                      echo "No .git folder found — cloning repo..."
+                      git clone https://github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git
+                      cd ${GIT_REPO_NAME}
+                    fi
+
                     git config user.email "vishnumv550@gmail.com"
                     git config user.name "Its me Vishnu M V"
                     BUILD_NUMBER=${BUILD_NUMBER}
