@@ -1,8 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-app
-  namespace: springboot-app-ns 
+  name: springboot-app 
   labels:
     app: springboot-app
 spec:
